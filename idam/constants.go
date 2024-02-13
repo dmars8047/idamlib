@@ -11,8 +11,3 @@ const (
 	// Disallowed special characters for passwords
 	DisallowedPassowrdSpecialCharacters = "\"'`~<>;"
 )
-
-// The identity provider names
-const (
-	MarshallLabsIdentityProvider = "marshall-labs"
-)
