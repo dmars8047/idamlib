@@ -6,6 +6,8 @@ type ErrorResponse struct {
 	Code    uint16   `json:"error_code"`
 	Message string   `json:"error_message"`
 	Details []string `json:"error_details"`
+	// Indicates the marshall-labs application (slug) that the error originated from.
+	SourceApp string `json:"error_source_app"`
 }
 
 // Error returns the error message for the ErrorResponse
@@ -17,9 +19,10 @@ func (err ErrorResponse) Error() string {
 // Usage: NewErrorResponse(0, "An error occured during validation")
 func NewErrorResponse(code uint16, message string) *ErrorResponse {
 	return &ErrorResponse{
-		Code:    code,
-		Message: message,
-		Details: []string{},
+		Code:      code,
+		Message:   message,
+		Details:   []string{},
+		SourceApp: "idam",
 	}
 }
 
@@ -27,18 +30,20 @@ func NewErrorResponse(code uint16, message string) *ErrorResponse {
 // Usage: NewDetailedErrorResponse(0, "An error occured during validation","message1", "message2")
 func NewDetailedErrorResponse(code uint16, message string, details ...string) *ErrorResponse {
 	return &ErrorResponse{
-		Code:    code,
-		Message: message,
-		Details: details,
+		Code:      code,
+		Message:   message,
+		Details:   details,
+		SourceApp: "idam",
 	}
 }
 
 // NewUnhandledErrorResponse creates an ErrorResponse with the code and message for an unhandled error.
 func NewUnhandledErrorResponse() *ErrorResponse {
 	return &ErrorResponse{
-		Code:    UnhandledError,
-		Message: UnhandledErrorMessage,
-		Details: []string{},
+		Code:      UnhandledError,
+		Message:   UnhandledErrorMessage,
+		Details:   []string{},
+		SourceApp: "idam",
 	}
 }
 
