@@ -43,7 +43,8 @@ func (request *UserRegistrationRequest) Validate() (valid bool, errors []string)
 	// The email must be not empty and valid email address
 	emailValidationResult := strval.ValidateStringWithName(request.Email, "email",
 		strval.MustNotBeEmpty(),
-		strval.MustBeValidEmailFormat())
+		strval.MustBeValidEmailFormat(),
+		strval.MustHaveMaxLengthOf(254))
 
 	if !emailValidationResult.Valid {
 		validationErrors = append(validationErrors, emailValidationResult.Messages...)
