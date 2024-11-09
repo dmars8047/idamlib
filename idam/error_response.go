@@ -101,6 +101,6 @@ const (
 	UserAccountLockout        = 75
 	UserAccountLockoutMessage = "user account lockout due to too many failed login attempts"
 	// Error code 80 indicates that the user is not registered with the target application
-	UserNotRegisteredWithApplication  = 80
-	UserNotRegiseteredWithApplication = "user not registered with target application"
+	UserNotRegisteredWithApplication        = 80
+	UserNotRegisteredWithApplicationMessage = "user not registered with target application"
 )
