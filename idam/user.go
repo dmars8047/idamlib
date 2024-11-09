@@ -9,6 +9,8 @@ const (
 )
 
 type UserApplication struct {
+	// ID of the application that the user belongs to.
+	Id string `json:"id"`
 	// Slug of the application this user belongs to.
 	Slug string `json:"slug"`
 	// The features of the application this user has access to
