@@ -6,6 +6,10 @@ import (
 	"github.com/dmars8047/strval"
 )
 
+type ExistingUserRegistrationRequest struct {
+	Email string `json:"email"`
+}
+
 type UserRegistrationRequest struct {
 	Username string `json:"username"`
 	Email    string `json:"email"`
