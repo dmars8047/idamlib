@@ -9,8 +9,6 @@ const (
 )
 
 type UserApplication struct {
-	// Id of the application this user belongs to.
-	Id string `json:"id"`
 	// Slug of the application this user belongs to.
 	Slug string `json:"slug"`
 	// The features of the application this user has access to
@@ -18,12 +16,12 @@ type UserApplication struct {
 }
 
 type User struct {
-	Id           string          `json:"id"`
-	Username     string          `json:"username"`
-	Email        string          `json:"email"`
-	Verified     bool            `json:"verified"`
-	Type         IdamUserType    `json:"type"`
-	Provider     string          `json:"provider"`
-	CreatedAtUTC time.Time       `json:"created_at_utc"`
-	Application  UserApplication `json:"application"`
+	Id           string            `json:"id"`
+	Username     string            `json:"username"`
+	Email        string            `json:"email"`
+	Verified     bool              `json:"verified"`
+	Type         IdamUserType      `json:"type"`
+	Provider     string            `json:"provider"`
+	CreatedAtUTC time.Time         `json:"created_at_utc"`
+	Applications []UserApplication `json:"applications"`
 }
