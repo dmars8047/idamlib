@@ -100,4 +100,7 @@ const (
 	// The lockout will expire 1 hour from the user's last failed login attempt.
 	UserAccountLockout        = 75
 	UserAccountLockoutMessage = "user account lockout due to too many failed login attempts"
+	// Error code 80 indicates that the user is not registered with the target application
+	UserNotRegisteredWithApplication  = 80
+	UserNotRegiseteredWithApplication = "user not registered with target application"
 )
