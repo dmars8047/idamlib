@@ -103,4 +103,10 @@ const (
 	// Error code 80 indicates that the user is not registered with the target application
 	UserNotRegisteredWithApplication        = 80
 	UserNotRegisteredWithApplicationMessage = "user not registered with target application"
+	// Error code 85 is similar to a Data Conflict but is specific to a users email
+	UserEmailConflict        = 85
+	UserEmailConflictMessage = "user email conflict"
+	// Error code 90 is similar to a Data Conflict but is specific to a users username
+	UsernameConflict        = 95
+	UsernameConflictMessage = "username conflict"
 )
